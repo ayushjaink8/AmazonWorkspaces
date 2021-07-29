@@ -2,6 +2,9 @@ import { useFormik } from 'formik';
 import { useState } from 'react';
 // material
 import { Box, Container, Stack, Typography } from '@material-ui/core';
+//iconify icon
+import { Icon } from '@iconify/react';
+import wiFiFill from '@iconify/icons-eva/wifi-fill';
 // components
 import Page from '../components/Page';
 
@@ -44,7 +47,8 @@ export default function Connect() {
     <Page title="Dashboard: Products | Minimal-UI">
       <Container>
         <Typography variant="h4" sx={{ mb: 5 }}>
-          Connect To Amazon Workspaces
+          Connect To Amazon Workspaces&nbsp;
+          <Icon icon={wiFiFill} width={22} height={22}/>
         </Typography>
 
         <Stack
@@ -54,8 +58,6 @@ export default function Connect() {
           justifyContent="center"
           sx={{ mb: 5 }}
         >
-          Connection here ...
-          <br/>
           <DisplayScreen/>
         </Stack>
       </Container>
