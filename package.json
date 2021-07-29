@@ -1,7 +1,6 @@
 {
-  "name": "@minimal/material-kit-react",
-  "author": "minimals.cc",
-  "licence": "MIT",
+  "name": "aws-workspaces-analysis",
+  "author": "Ayush Jain",
   "version": "1.0.0",
   "private": false,
   "scripts": {
