@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import DashboardApp from './pages/DashboardApp';
 import Connect from './pages/Connect';
-import Blog from './pages/Blog';
+import Explore from './pages/Explore';
 import User from './pages/User';
 import NotFound from './pages/Page404';
 
@@ -23,7 +23,7 @@ export default function Router() {
         { path: 'app', element: <DashboardApp /> },
         { path: 'user', element: <User /> },
         { path: 'connect', element: <Connect /> },
-        { path: 'blog', element: <Blog /> }
+        { path: 'explore', element: <Explore /> }
       ]
     },
     {
@@ -33,7 +33,7 @@ export default function Router() {
         { path: 'login', element: <Login /> },
         { path: 'register', element: <Register /> },
         { path: '404', element: <NotFound /> },
-        { path: '/', element: <Navigate to="/dashboard" /> },
+        { path: '/', element: <Navigate to="/login" /> },
         { path: '*', element: <Navigate to="/404" /> }
       ]
     },

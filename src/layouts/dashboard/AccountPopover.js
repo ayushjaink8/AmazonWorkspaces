@@ -6,11 +6,13 @@ import settings2Fill from '@iconify/icons-eva/settings-2-fill';
 import { Link as RouterLink } from 'react-router-dom';
 // material
 import { alpha } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/styles';
 import { Button, Box, Divider, MenuItem, Typography, Avatar, IconButton } from '@material-ui/core';
 // components
 import MenuPopover from '../../components/MenuPopover';
 //
 import account from '../../_mocks_/account';
+import { ClassNames } from '@emotion/react';
 
 // ----------------------------------------------------------------------
 
@@ -18,7 +20,7 @@ const MENU_OPTIONS = [
   {
     label: 'Home',
     icon: homeFill,
-    linkTo: '/'
+    linkTo: '/dashboard'
   },
   {
     label: 'Profile',
@@ -37,6 +39,15 @@ const MENU_OPTIONS = [
 export default function AccountPopover() {
   const anchorRef = useRef(null);
   const [open, setOpen] = useState(false);
+
+  const useStyles = makeStyles({
+    loginBtn: {
+     color: '#bb0000',
+     textDecoration: 'none'
+    },
+  });
+
+  const classes = useStyles();
 
   const handleOpen = () => {
     setOpen(true);
@@ -110,9 +121,11 @@ export default function AccountPopover() {
         ))}
 
         <Box sx={{ p: 2, pt: 1.5 }}>
-          <Button fullWidth color="inherit" variant="outlined">
-            Logout
-          </Button>
+          <RouterLink className={classes.loginBtn} to="/login">
+            <Button fullWidth color="inherit" variant="outlined">
+              Logout
+            </Button>
+          </RouterLink>
         </Box>
       </MenuPopover>
     </>
